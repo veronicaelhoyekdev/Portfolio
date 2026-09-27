@@ -26,7 +26,7 @@ const nav = [
   { label: 'Expertise', href: '#expertise' },
   { label: 'Case Studies', href: '#case-studies' },
   { label: 'Experience & Education', href: '#experience' },
-  { label: 'GitHub', href: 'https://github.com/veronica-el-hoyek' },
+  { label: 'GitHub', href: 'https://github.com/veronicaelhoyekdev' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/veronica-el-hoyek' },
 ];
 
@@ -53,7 +53,17 @@ const expertise = [
   },
 ];
 
-const caseStudies = [
+type CaseStudy = {
+  index: string;
+  categories: string[];
+  title: string;
+  overview: string;
+  highlights: string[];
+  stack: string[];
+  repository?: string;
+};
+
+const caseStudies: CaseStudy[] = [
   {
     index: '01',
     categories: ['AI & Data'],
@@ -117,6 +127,7 @@ const caseStudies = [
       'Kotlin mobile app experience for tracking and discovery on Android.',
     ],
     stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Kotlin'],
+    repository: 'https://github.com/veronicaelhoyekdev/Popcorn',
   },
   {
     index: '06',
@@ -144,6 +155,20 @@ const caseStudies = [
       'Integrated into the live React/TypeScript portfolio through a FastAPI chat endpoint.',
     ],
     stack: ['Python', 'FastAPI', 'PostgreSQL', 'pgvector', 'RAG', 'React', 'TypeScript'],
+    repository: 'https://github.com/veronicaelhoyekdev/Veronica-ai',
+  },
+  {
+    index: '08',
+    categories: ['Full-Stack'],
+    title: 'Bookstore REST API',
+    overview: 'RESTful backend for managing books, authors, and publishers, with authentication, structured validation, and MongoDB persistence.',
+    highlights: [
+      'DTO-based request and response models.',
+      'JWT-based authentication and authorization.',
+      'ISBN-10 / ISBN-13 validation and centralized exception handling.',
+    ],
+    stack: ['Java 17', 'Spring Boot', 'Spring Security', 'MongoDB', 'JWT', 'OpenAPI', 'Docker'],
+    repository: 'https://github.com/veronicaelhoyekdev/Bookstore',
   },
 ];
 
@@ -188,12 +213,12 @@ const frenchExpertise = [
   { icon: Boxes, title: '3D, XR & simulation', skills: expertise[3].skills },
 ];
 
-const frenchCaseStudies = [
+const frenchCaseStudies: CaseStudy[] = [
   { index: '01', categories: ['IA & Data'], title: 'Agent conversationnel et d’action IA autonome', overview: 'Système RAG d’entreprise et agentique permettant une recherche en langage naturel dans de grands corpus documentaires et l’exécution d’actions automatisées via des APIs.', highlights: ['Recherche hybride combinant recherche vectorielle dense et recherche lexicale BM25.', 'Filtrage par métadonnées pour éviter les hallucinations entre domaines institutionnels distincts.', 'Routage des intentions entre requêtes informatives et services avec tool calling.'], stack: ['Python', 'Vector Databases', 'LLMs', 'REST APIs'] },
   { index: '02', categories: ['3D & XR'], title: 'Serious game 3D et simulation anatomique interactive', overview: 'Plateforme éducative interactive en 3D WebGL conçue pour simuler en temps réel des mouvements musculaires et des phénomènes biomécaniques complexes.', highlights: ['Pipeline 3D complet, des concepts 2D au rigging des personnages dans Blender et à l’animation.', 'Machines à états personnalisées en C# dans Unity pour le comportement de la simulation interactive.', 'Système bilingue de localisation audio et textuelle dynamique.', 'Optimisation des performances WebGL pour une diffusion dans le navigateur.'], stack: ['Unity URP', 'C#', 'Blender', 'Character Creator', 'WebGL'] },
   { index: '03', categories: ['IA & Data', 'Full-Stack'], title: 'Plateforme de jumeau numérique industriel temps réel', overview: 'Plateforme logicielle connectée pour superviser la télémétrie en temps réel, rejouer des expériences historiques et optimiser des systèmes industriels physiques.', highlights: ['Ingestion de matériel IoT multi-protocoles avec Modbus et CAN bus.', 'Dashboard live pour la supervision opérationnelle en temps réel.', 'Modes de simulation synthétique pour tester des états de fonctionnement anormaux.', 'Optimisation bayésienne des paramètres pour le réglage des systèmes industriels.'], stack: ['Python', 'IoT Gateways', 'Web Dashboards', 'Bayesian Optimization'] },
   { index: '04', categories: ['3D & XR', 'IA & Data'], title: 'Démonstrateur industriel immersif multiplateforme', overview: 'Système unifié d’inspection industrielle multiplateforme présenté lors d’un grand salon européen de la technologie.', highlights: ['Environnement 3D unifié déployé sur WebGL, mobile et VR/AR.', 'Surcouches de données AR spatiales sur des équipements physiques.', 'Assistant conversationnel IA intégré pour inspecter l’état des machines en mains libres.', 'Simulation de signaux en temps réel pour des parcours de démonstration industriels réalistes.'], stack: ['Unity', 'C#', 'Spatial AR/VR', 'WebGL', 'Real-Time Signal Mocking'] },
-  { index: '05', categories: ['Full-Stack', 'Mobile'], title: 'Popcorn - application de découverte et de suivi média', overview: 'Application web moderne de découverte et de suivi média, accompagnée d’une application mobile développée avec Kotlin.', highlights: ['Pages dynamiques server-rendered pour une découverte rapide des médias.', 'Intégration API type-safe pour la recherche, les filtres et les pages de détail.', 'UI responsive soignée avec une architecture personnalisée de recherche et de filtres.', 'Expérience mobile Kotlin pour le suivi et la découverte sur Android.'], stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Kotlin'] },
+  { index: '05', categories: ['Full-Stack', 'Mobile'], title: 'Popcorn - application de découverte et de suivi média', overview: 'Application web moderne de découverte et de suivi média, accompagnée d’une application mobile développée avec Kotlin.', highlights: ['Pages dynamiques server-rendered pour une découverte rapide des médias.', 'Intégration API type-safe pour la recherche, les filtres et les pages de détail.', 'UI responsive soignée avec une architecture personnalisée de recherche et de filtres.', 'Expérience mobile Kotlin pour le suivi et la découverte sur Android.'], stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Kotlin'], repository: 'https://github.com/veronicaelhoyekdev/Popcorn' },
   { index: '06', categories: ['Full-Stack', 'Mobile'], title: 'PolyHome - application Android domotique', overview: 'Application Android native de domotique pour gérer les appareils connectés, l’authentification, les accès à la maison et les contrôles d’appareils via une API REST authentifiée.', highlights: ['Développement complet de l’application Android native en Kotlin, de l’authentification et de l’état applicatif aux interfaces des appareils domotiques.', 'Intégration d’une API REST avec gestion JSON et authentification par token Bearer, incluant la persistance locale de l’état d’authentification.', 'Contrôle dynamique et visualisation de l’état des lumières, portes de garage, volets coulissants et volets roulants selon les capacités retournées par l’API.', 'Gestion des accès multi-utilisateurs à la maison : consultation, attribution et révocation des accès.'], stack: ['Kotlin', 'Android', 'REST API', 'JSON', 'Bearer Authentication'] },
   {
     index: '07',
@@ -208,6 +233,20 @@ const frenchCaseStudies = [
       'Intégration au portfolio React/TypeScript en ligne via un endpoint de chat FastAPI.',
     ],
     stack: ['Python', 'FastAPI', 'PostgreSQL', 'pgvector', 'RAG', 'React', 'TypeScript'],
+    repository: 'https://github.com/veronicaelhoyekdev/Veronica-ai',
+  },
+  {
+    index: '08',
+    categories: ['Full-Stack'],
+    title: 'Bookstore REST API',
+    overview: 'Backend RESTful pour gérer les livres, les auteurs et les éditeurs, avec authentification, validation structurée et persistance MongoDB.',
+    highlights: [
+      'Modèles de requête et de réponse basés sur des DTO.',
+      'Authentification et autorisation JWT.',
+      'Validation ISBN-10 / ISBN-13 et gestion centralisée des exceptions.',
+    ],
+    stack: ['Java 17', 'Spring Boot', 'Spring Security', 'MongoDB', 'JWT', 'OpenAPI', 'Docker'],
+    repository: 'https://github.com/veronicaelhoyekdev/Bookstore',
   },
 ];
 
@@ -251,7 +290,6 @@ export function App() {
           <Notice />
           <Expertise />
           <CaseStudies />
-          <AdditionalProjects />
           <Timeline />
         </main>
         <Footer />
@@ -469,16 +507,24 @@ function CaseStudies() {
       <div className="mt-10 space-y-5">
         {visibleCaseStudies.map((cs) => (
           <article key={cs.index} className="glass-panel hover-lift rounded-lg p-6 sm:p-8">
-            <div>
-              <span className="font-mono text-xs text-primary">CASE_{cs.index}</span>
-              <h3 className="mt-2 text-xl font-semibold sm:text-2xl">{cs.title}</h3>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {cs.categories.map((category) => (
-                  <span key={category} className="rounded-sm border border-border bg-slate-50 px-2.5 py-1 font-mono text-[11px] text-muted-foreground">
-                    {category}
-                  </span>
-                ))}
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <span className="font-mono text-xs text-primary">CASE_{cs.index}</span>
+                <h3 className="mt-2 text-xl font-semibold sm:text-2xl">{cs.title}</h3>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {cs.categories.map((category) => (
+                    <span key={category} className="rounded-sm border border-border bg-slate-50 px-2.5 py-1 font-mono text-[11px] text-muted-foreground">
+                      {category}
+                    </span>
+                  ))}
+                </div>
               </div>
+              {cs.repository && (
+                <a href={cs.repository} target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center gap-2 self-start rounded-md border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-sky-500 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-600">
+                  {locale === 'fr' ? 'Voir le dépôt GitHub' : 'View GitHub repository'}
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+              )}
             </div>
             <div className="mt-6 rounded-md border border-border bg-slate-50/80 p-4">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-primary">{t.overview}</p>
@@ -509,52 +555,6 @@ function CaseStudies() {
           </article>
         ))}
       </div>
-    </section>
-  );
-}
-
-function AdditionalProjects() {
-  const { locale } = useLocale();
-  const content = locale === 'fr'
-    ? {
-        heading: 'Autres projets',
-        description: 'Backend RESTful pour gérer les livres, les auteurs et les éditeurs, avec authentification, validation structurée et persistance MongoDB.',
-        highlights: ['Modèles de requête et de réponse basés sur des DTO', 'Authentification et autorisation JWT', 'Validation ISBN-10 / ISBN-13 et gestion centralisée des exceptions'],
-        repository: 'Voir le dépôt GitHub',
-      }
-    : {
-        heading: 'Additional Projects',
-        description: 'RESTful backend for managing books, authors, and publishers, with authentication, structured validation, and MongoDB persistence.',
-        highlights: ['DTO-based request and response models', 'JWT-based authentication and authorization', 'ISBN-10 / ISBN-13 validation and centralized exception handling'],
-        repository: 'View GitHub Repository',
-      };
-  const stack = ['Java 17', 'Spring Boot', 'Spring Security', 'MongoDB', 'JWT', 'OpenAPI', 'Docker'];
-
-  return (
-    <section id="additional-projects" aria-labelledby="additional-projects-title" className="mx-auto max-w-6xl px-5 pb-16 sm:px-8 sm:pb-24">
-      <h2 id="additional-projects-title" className="text-xl font-semibold">{content.heading}</h2>
-      <article aria-labelledby="bookstore-title" className="glass-panel hover-lift mt-6 rounded-lg p-6">
-        <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-          <div className="max-w-2xl">
-            <h3 id="bookstore-title" className="text-lg font-semibold">Bookstore REST API</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{content.description}</p>
-          </div>
-          <a href="https://github.com/veronica-el-hoyek/Bookstore-REST-API" className="inline-flex shrink-0 self-start items-center gap-2 rounded-md border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-sky-500 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-600">
-            {content.repository}
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </a>
-        </div>
-        <ul className="mt-4 list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
-          {content.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
-        </ul>
-        <ul className="mt-5 flex flex-wrap gap-2">
-          {stack.map((tech) => (
-            <li key={tech} className="rounded-sm border border-border bg-slate-50 px-2.5 py-1 font-mono text-[11px] text-muted-foreground">
-              {tech}
-            </li>
-          ))}
-        </ul>
-      </article>
     </section>
   );
 }
